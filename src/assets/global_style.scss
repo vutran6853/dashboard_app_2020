@@ -1,0 +1,12 @@
+$mainColor: red;
+
+@mixin display_flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin display_flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
