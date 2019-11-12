@@ -1,5 +1,3 @@
-// import Navbar from '../Navbar/Navbar'
-
 const state = {
   person1: {
     payment: 0,

@@ -24,5 +24,6 @@ export default {
 .app_container {
   display: grid;
   grid-template-columns: 10rem 1fr;
+  height: 100vh;
 }
 </style>

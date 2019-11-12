@@ -6,11 +6,11 @@
 }
 
 .navbar_container {
-  background-color: lightblue;
-  min-height: 50rem;
+  background-color: rgb(228, 198, 255);
+  // min-height: 50rem;
   display: flex;
   flex-direction: row;
-  background-color: red;
+  // background-color: red;
   width: 10rem;
   padding-top: 10rem;
 
@@ -18,22 +18,47 @@
     display: flex;
     // flex-direction: row;
     flex-direction: column;
-    background-color: red;
+    // background-color: red;
+    // background-color: lightblue;
+    // color: lightblue;
     width: 10rem;
     height: 20rem;
+    justify-content: space-around;
   }
-  
+
+  // button {
+  //   background-color: lightblue;
+  // }
+
   .navbar_item {
     // background-color: gainsboro;
     // height: 50px;
     // height: 100vh;
-    // width: 10%;
-    // display: flex;
-    // align-content: space-between;
+    // width: 100%;
+    display: flex;
+    align-self: center;
     // justify-content: space-between;
 
-    &:hover {
-      background-color: lightblue;
+    background-color: lightblue;
+
+    button {
+      outline: none;
+      border-style: none;
+      width: 9rem;
+      height: 30px;
+      cursor: pointer;
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-bottom-left-radius: 25px;
+      color: white;
+      background-color: rgb(228, 198, 255);
+
+      &:hover {
+        // background-color: red;
+        background-color: white;
+        color: lightblue;
+      }
     }
 
     a {
@@ -41,9 +66,9 @@
       color: black;
 
       // p {
-        // @include diplay_flex_row_justify_center_align_center;
-        // height: 100%;
-        // width: 100%;
+      // @include diplay_flex_row_justify_center_align_center;
+      // height: 100%;
+      // width: 100%;
       // }
     }
   }

@@ -1,0 +1,48 @@
+@mixin button_style($prop, $color) {
+  border-style: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    #{$prop}: $color;
+  }
+}
+
+.utitles_container {
+  background-color: lightcoral;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .utitles_form {
+    background-color: red;
+    height: 30rem;
+    width: 30rem;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 48px;
+
+    div {
+      background-color: blueviolet;
+      // border-radius: 5%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    ::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    .btn_submit {
+      @include button_style(background-color, lightcoral);
+    }
+
+    .btn_clear {
+      @include button_style(background-color, blue);
+    }
+  }
+}
