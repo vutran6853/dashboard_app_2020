@@ -5,7 +5,7 @@ const navbar = {
   data() {
     return {
       // navbarItem: ['room', 'rent', 'Item3', 'Item4'],
-      navbarItem: ['Dashboard', 'Tasks', 'Email', 'Contacts', 'Chat', 'Weather', 'Settings', 'Login']
+      navbarItem: ['Dashboard', 'Tasks', 'Email', 'Graphic', 'Chat', 'Weather', 'Settings', 'Login']
     }
   },
 

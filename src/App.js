@@ -1,20 +1,16 @@
-// // import Route, {  } from  'vue-router'
-// // import temRoute from './router/temRoute'
-// import Navbar from './components/Navbar/Navbar'
-// import Layout from './components/layout/layout'
+import Navbar from './components/navbar/navbar'
+import './app.scss'
 
-// const App = {
-//   name: 'App',
-//   render() {
-//     return (
-//       <div>
-//         <Navbar/>
-//         {/* {temRoute} */}
-//         {/* <temRoute/> */}
-//         {/* <Layout/> */}
-//       </div>
-//     )
-//   }
-// }
+const app = {
+  name: 'App',
+  render() {
+    return (
+      <div class="app_container">
+        <Navbar />
+        <router-view></router-view>
+      </div>
+    )
+  }
+}
 
-// export default App
+export default app

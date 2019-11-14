@@ -1,0 +1,4 @@
+const SET_NEW_ITEM = 'task/SET_NEW_ITEM'
+const SET_ITEM_ISTRUE = 'task/SET_ITEM_ISTRUE'
+
+export { SET_NEW_ITEM, SET_ITEM_ISTRUE }

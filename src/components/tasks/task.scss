@@ -2,6 +2,8 @@
   border-style: none;
   cursor: pointer;
   border-radius: 5px;
+  height: 30px;
+  width: 100px;
 
   &:hover {
     #{$prop}: $color;
@@ -10,27 +12,29 @@
 
 .utitles_container {
   background-color: lightcoral;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
   .utitles_form {
-    background-color: red;
+    // background-color: red;
+    border: 2px solid red;
+    box-shadow: 5px 5px blueviolet;
     height: 30rem;
     width: 30rem;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 48px;
+    justify-content: space-between;
+    // padding-top: 48px;
 
     div {
-      background-color: blueviolet;
-      // border-radius: 5%;
+      // background-color: blueviolet;
+      // border-radius: 25px;
       display: flex;
       flex-direction: row;
+      justify-content: space-evenly;
     }
 
     ::-webkit-inner-spin-button {

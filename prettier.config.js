@@ -4,8 +4,8 @@ const config = {
   printWidth: 120,
   bracketSpacing: true,
   jsxBracketSameLine: true,
-  trailingComma: "none",
-  arrowParens: "always",
+  trailingComma: 'none',
+  arrowParens: 'always',
   singleQuote: true
 }
 

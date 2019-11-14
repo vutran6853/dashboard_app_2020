@@ -8,10 +8,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
-
 app.listen(PORT, () => {
   // console.log('Server is UP and listen to port', + PORT)
-  consola.success('Server is UP and listen to port', + PORT)
+  consola.success('Server is UP and listen to port', +PORT)
   console.log('consola === ', consola._reporters[0].options.dateFormat)
   console.log('consola === ', consola._reporters[0].options.formatOptions)
 

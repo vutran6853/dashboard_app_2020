@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "clean": "prettier --write ./src/**"
+    "clean": "prettier --write ./src/**",
+    "clean_w": "powershell npx onchange '**/*.js' -- prettier --write './src/**'"
   },
   "dependencies": {
     "core-js": "^3.3.5",
@@ -23,6 +24,7 @@
     "@vue/cli-plugin-vuex": "^4.0.5",
     "@vue/cli-service": "^4.0.5",
     "babel-eslint": "^10.0.3",
+    "chart.js": "^2.9.2",
     "consola": "^2.10.1",
     "cors": "^2.8.5",
     "eslint": "^6.6.0",

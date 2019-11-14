@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../components/Home'
+import Home from '../components/Home.js'
 // import App from '../App.vue'
 import Room from '../components/room/room'
 import Rent from '../components/rent/rent'
 import tasks from '../components/tasks/tasks'
-import Item4 from '../components/item4/Item4'
+import graphic from '../components/graphic/graphic'
 
 Vue.use(VueRouter)
 
@@ -31,9 +31,9 @@ const routes = [
     component: tasks
   },
   {
-    path: '/item4',
-    name: 'Item4',
-    component: Item4
+    path: '/graphic',
+    name: 'Graphic',
+    component: graphic
   }
 ]
 
