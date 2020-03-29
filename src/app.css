@@ -1,0 +1,29 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.app_container {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  height: 100vh;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  margin: 0;
+  display: none;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+
+}
+
+@media screen and (max-width: 420px) {
+
+}
+
+@media screen and (max-width: 290px) {
+  
+}

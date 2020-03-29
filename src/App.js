@@ -1,7 +1,8 @@
-import Navbar from './components/navbar/navbar'
-import './app.scss'
+import Vue from 'vue'
+import Navbar from './components/navbar/Navbar'
+import './app.css'
 
-const app = {
+const App = Vue.extend({
   name: 'App',
   render() {
     return (
@@ -11,6 +12,6 @@ const app = {
       </div>
     )
   }
-}
+})
 
-export default app
+export default App

@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 const state = {
   person1: {
     payment: 0,
@@ -13,14 +15,13 @@ const state = {
   selectedName: ''
 }
 
-const rent = {
+const Rent = Vue.extend({
   name: 'Rent',
   data() {
     return state
   },
-  payment1: 1,
   methods: {
-    handleSubmitPayment: function() {
+    handleSubmitPayment() {
       console.log(state.person1)
       if (state.person1.payment !== 0 && state.selectedName !== '---') {
         // state.person1.payment = parseFloat(e.target.value)
@@ -29,39 +30,37 @@ const rent = {
         // state.person1.payment = parseFloat(e.target.value)
       }
     },
-    handleSetPayment: function(e) {
+    handleSetPayment(event) {
       if (state.selectedName === 'Vu') {
-        state.person1.payment = parseFloat(e.target.value)
+        state.person1.payment = parseFloat(event.target.value)
       }
       if (state.selectedName === 'Tran') {
-        state.person2.payment = parseFloat(e.target.value)
+        state.person2.payment = parseFloat(event.target.value)
       }
       return null
     },
-    handleSelectName: function(e) {
-      // console.log(e.target.value)
-      if (e.target.value !== '---') {
-        state.selectedName = e.target.value
+    handleSelectName(event) {
+      if (event.target.value !== '---') {
+        state.selectedName = event.target.value
       }
       return null
     }
   },
 
   render() {
-    let renderName = state.name.map((value) => <option value={value}>{value}</option>)
+    let renderName = state.name.map((value) => (<option key={value} value={value}>{value}</option>))
 
     return (
       <div>
-        <h1>rent Payment</h1>
-        <p>asdasdasdasds</p>
-        <select onChange={this.handleSelectName}>{renderName}</select>
-        <input type="number" value={this.payment} name="payment" onChange={this.handleSetPayment} />
-        <button type="submit" onClick={this.handleSubmitPayment}>
+        <h1>Rent Payment</h1>
+        <select onchange={this.handleSelectName}>{renderName}</select>
+        <input type="number" value={this.payment} name="payment" onchange={this.handleSetPayment} />
+        <button type="submit" onclick={this.handleSubmitPayment}>
           Submit
         </button>
       </div>
     )
   }
-}
+})
 
-export default rent
+export default Rent

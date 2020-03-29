@@ -1,4 +1,5 @@
-import * as type from './task_mutations'
+// import { SET_ITEM_ISTRUE, SET_NEW_ITEM } from './task_mutations'
+import type from './task_mutations'
 
 const state = {
   item: [
@@ -20,7 +21,9 @@ const getters = {
 }
 
 const actions = {
-  UPDATE_NEW_ITEM_ACTION: function({}, payload) {
+  // updateNewItem
+  // UPDATE_NEW_ITEM_ACTION: 
+  updateNewItem({}, payload) {
     let obj = {
       id: Math.random(),
       text: payload,
@@ -28,17 +31,18 @@ const actions = {
     }
     this.commit(type.SET_NEW_ITEM, obj)
   },
-  UPDATE_ITEM_ISTRUE_ACTION: function({}, passID) {
+  // UPDATE_ITEM_ISTRUE_ACTION:
+  updateItemIsTrue({}, passID) {
     this.commit(type.SET_ITEM_ISTRUE, passID)
   }
 }
 
 const mutations = {
-  SET_NEW_ITEM: function(state, payload) {
-    console.log({ payload })
+  [type.SET_NEW_ITEM]: function (state, payload) {
+    // console.log({ payload })
     state.item = [...state.item, payload]
   },
-  SET_ITEM_ISTRUE: function(state, payload) {
+  [type.SET_ITEM_ISTRUE]: function (state, payload) {
     state.item = state.item.filter((value) => {
       if (value.id === payload.id) {
         value.isTrue = !value.isTrue

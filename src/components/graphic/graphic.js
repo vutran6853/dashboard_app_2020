@@ -1,7 +1,8 @@
-// import Navbar from '../Navbar/Navbar'
 // import { Bar } from 'vue-chartjs'
+import Vue from 'vue'
 import Chart from 'chart.js'
-const graphic = {
+
+const Graphic = Vue.extend({
   name: 'Graphic',
   data() {
     return {
@@ -9,8 +10,8 @@ const graphic = {
     }
   },
   mounted() {
-    var ctx = document.getElementById('myChart')
-    var myChart = new Chart(ctx, {
+    let ctx = document.getElementById('myChart')
+    let myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
@@ -48,6 +49,6 @@ const graphic = {
       </div>
     )
   }
-}
+})
 
-export default graphic
+export default Graphic

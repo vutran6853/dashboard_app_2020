@@ -1,11 +1,11 @@
-// import Navbar from '../Navbar/Navbar'
+import Vue from 'vue'
 import rangeYear from '../../helper/rangeYear'
 import rangeMonth from '../../helper/rangeMonth'
+// import type from '../../store/task/task_mutations'
+// import action from '../../store/task/task_action'
 import './task.scss'
-import * as type from '../../store/task/task_mutations'
-import * as action from '../../store/task/task_action'
 
-const tasks = {
+const Tasks = Vue.extend({
   name: 'Tasks',
   data() {
     return {
@@ -24,18 +24,18 @@ const tasks = {
     }
   },
   created() {
-    console.log('created component')
-    console.log(this.$store)
-    this.$store.commit(type.SET_NEW_ITEM, {
-      text: 'HEllo world'
-    })
-    this.$store.dispatch(action.UPDATE_NEW_ITEM_ACTION, {
-      text: 'HEllo world'
-    })
+    // console.log('created component')
+    // console.log(this.$store)
+    // this.$store.commit(type.SET_NEW_ITEM, {
+    //   text: 'HEllo world'
+    // })
+    // this.$store.dispatch(action.updateNewItem, {
+    //   text: 'HEllo world'
+    // })
 
-    this.$store.dispatch(action.UPDATE_ITEM_ISTRUE_ACTION, {
-      id: 1
-    })
+    // this.$store.dispatch(action.updateItemIsTrue, {
+    //   id: 1
+    // })
   },
   methods: {
     handleSetPayment(e) {
@@ -44,16 +44,17 @@ const tasks = {
         payment: parseFloat(e.target.value)
       }
     },
+
     handleSetDate(e) {
       this[e.target.name] = {
         ...this[e.target.name],
         date: e.target.value
       }
     },
+
     handleSubmitInfo(e) {
       console.log(e.defaultPrevented)
       e.preventDefault()
-      console.log(e.defaultPrevented)
       // console.log('d', e.target.name, e.target.value)
       if (this.gas.payment !== 0 || this.water.payment !== 0 || this.internet.payment !== 0) {
         console.log('post to DB')
@@ -65,6 +66,7 @@ const tasks = {
       }
       return null
     },
+
     handleResetState(e) {
       e.preventDefault()
       this.gas = {
@@ -110,21 +112,21 @@ const tasks = {
           </div>
           <div>
             <p>Gas:</p>
-            <input type="number" name="gas" value={this.gas.payment} onChange={this.handleSetPayment} />
-            <input type="date" name="gas" value={this.gas.date} onChange={this.handleSetDate} />
+            <input type="number" name="gas" value={this.gas.payment} onchange={this.handleSetPayment} />
+            <input type="date" name="gas" value={this.gas.date} onchange={this.handleSetDate} />
           </div>
 
           <div>
             <p>Water:</p>
-            <input type="number" name="water" value={this.water.payment} onChange={this.handleSetPayment} />
-            <input type="date" name="water" value={this.water.date} onChange={this.handleSetDate} />
+            <input type="number" name="water" value={this.water.payment} onchange={this.handleSetPayment} />
+            <input type="date" name="water" value={this.water.date} onchange={this.handleSetDate} />
           </div>
 
           <div>
-            <button class="btn_clear" onClick={(e) => this.handleResetState(e)}>
+            <button class="btn_clear" onclick={(e) => this.handleResetState(e)}>
               clear
             </button>
-            <button class="btn_submit" onClick={(e) => this.handleSubmitInfo(e)}>
+            <button class="btn_submit" onclick={(e) => this.handleSubmitInfo(e)}>
               Submit
             </button>
           </div>
@@ -132,6 +134,6 @@ const tasks = {
       </div>
     )
   }
-}
+})
 
-export default tasks
+export default Tasks

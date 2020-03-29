@@ -1,6 +1,7 @@
-// import Navbar from '../Navbar/Navbar'
+import Vue from 'vue'
+import action from '../../store/task/task_action'
 
-const room = {
+const Room = Vue.extend({
   name: 'Room',
   data() {
     return {
@@ -12,12 +13,12 @@ const room = {
     // console.log(this.name)
   },
   methods: {
-    handleUserText(e) {
+    handleUserText(event) {
       console.log(this.$store)
-      this.$store.dispatch('updateNewItemAction', e.target.value)
+      this.$store.dispatch(action.updateNewItem, event.target.value)
     },
     handleUpdateBool(passId) {
-      this.$store.dispatch('updateItemisTrueAction', passId)
+      this.$store.dispatch(action.updateItemIsTrue, passId)
     }
   },
   computed: {
@@ -27,7 +28,6 @@ const room = {
       }
     }
   },
-
   render() {
     let renderItem = this.item.map((value) => {
       return (
@@ -35,7 +35,7 @@ const room = {
           <h1>{value}</h1>
           <h3>
             {value.isTrue ? 'true' : 'false'}
-            <input type="checkbox" name={value.text} onClick={() => this.handleUpdateBool(value.id)} />
+            <input type="checkbox" name={value.text} onclick={() => this.handleUpdateBool(value.id)} />
           </h3>
         </div>
       )
@@ -43,12 +43,12 @@ const room = {
 
     return (
       <div>
-        room.jsx
-        <input placeholder="Enter a message" onChange={this.handleUserText} value={this.text} />
+        Room Components
+        <input placeholder="Enter a message" onchange={this.handleUserText} value={this.text} />
         {renderItem}
       </div>
     )
   }
-}
+})
 
-export default room
+export default Room

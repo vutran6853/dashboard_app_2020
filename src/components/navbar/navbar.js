@@ -1,29 +1,37 @@
+import Vue from 'vue'
 import './navbar.scss'
 
-const navbar = {
+const Navbar = Vue.extend({
   name: 'Navbar',
   data() {
     return {
-      // navbarItem: ['room', 'rent', 'Item3', 'Item4'],
-      navbarItem: ['Dashboard', 'Tasks', 'Email', 'Graphic', 'Chat', 'Weather', 'Settings', 'Login']
+      navbarItem: [
+        { id: 0, path: 'Dashboard' },
+        { id: 1, path: 'Tasks' },
+        { id: 2, path: 'Email' },
+        { id: 3, path: 'Graphic' },
+        { id: 4, path: 'Chat' },
+        { id: 5, path: 'Weather' },
+        { id: 6, path: 'Settings' },
+        { id: 7, path: 'Login' }
+      ]
     }
   },
-
   methods: {
-    handleRouteTo(e) {
-      if (this.$route.path !== `/${e.target.value}`) {
-        this.$router.push({ path: `/${e.target.value.toLowerCase()}` })
+    handleRouteTo(event) {
+      if (this.$route.path !== `/${event.target.value}`) {
+        this.$router.push({ 
+          path: `/${event.target.value.toLowerCase()}` 
+        })
       }
       return null
     }
   },
-
   render() {
-    console.log(this)
     let renderNavbarItem = this.navbarItem.map((value) => (
-      <div class="navbar_item">
-        <button value={`${value}`} onClick={this.handleRouteTo}>
-          {value}
+      <div class="navbar_item" key={value.id}>
+        <button value={`${value.path}`} onclick={this.handleRouteTo}>
+          {value.path}
         </button>
       </div>
     ))
@@ -34,6 +42,6 @@ const navbar = {
       </div>
     )
   }
-}
+})
 
-export default navbar
+export default Navbar
