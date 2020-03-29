@@ -8,13 +8,13 @@ const state = {
     { id: 4, text: 'I love react', isTrue: false }
   ],
   task: {
-    price: Number,
+    price: null,
     date: ''
   }
 }
 
 const getters = {
-  getItem: function(state) {
+  getText: function(state) {
     return state.item.map((value) => value.text)
   }
 }
