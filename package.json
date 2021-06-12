@@ -30,7 +30,7 @@
     "eslint": "^6.6.0",
     "eslint-plugin-vue": "^5.2.3",
     "express": "^4.17.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.19.4",
     "prettier": "^1.18.2",
     "sass-loader": "^8.0.0",
