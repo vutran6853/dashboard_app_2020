@@ -22,7 +22,7 @@
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-plugin-router": "^4.0.5",
     "@vue/cli-plugin-vuex": "^4.0.5",
-    "@vue/cli-service": "^4.0.5",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.0.3",
     "chart.js": "^2.9.2",
     "consola": "^2.10.1",
